@@ -1,0 +1,258 @@
+html,body{
+    margin:0%;
+    padding:0%;
+    height: 100%;
+    background: #7fffD4;
+}
+.container{
+    height: 90%;
+    width:80%;
+    background: #7fffD4;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr; 
+    grid-template-rows: 100px 150px auto 150px;
+    grid-template-areas:"h1 h2 h3"
+                        "c1 c2 c3"
+                        "r1 r2 r3"
+                        "p1 p2 p3";
+    margin:50px auto;
+    grid-auto-flow: row dense;
+}
+/*clouds*/
+.cloud1,.cloud2,.cloud3{
+    grid-area:c1; 
+    background:#00008b;
+    width: 125px;
+    height:50px;
+    border-radius:35%;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+.cloud1:before,.cloud2:before,.cloud3:before{
+    content: "";
+    background:#00008b;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    position: absolute;
+    bottom:40%;
+    left:10%;
+}
+.cloud1:after,.cloud2:after,.cloud3:after{
+    content:"";
+    background: #00008b;
+    width:75px;
+    height:75px;
+    border-radius: 50%;
+    position: absolute;
+    bottom:30%;
+    right:2%;
+}
+
+.cloud2{
+    grid-area:c2; 
+}
+.cloud3{
+    grid-area:c3; 
+}
+
+/*puddles */
+.puddle1,.puddle2,.puddle3{
+    background: brown;
+    width:175px;
+    height:50px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+.puddle1{
+    grid-area: p1;
+}
+.puddle2{
+    grid-area: p2;
+}
+.puddle3{
+    grid-area: p3;
+}
+
+/*rain*/
+.rain1,.rain2,.rain3{
+    background:#7fffD4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.rain1{
+    grid-area: r1;
+    /*background: #00008b;*/
+}
+.rain2{
+    grid-area: r2;
+}
+.rain3{
+    grid-area: r3;
+}
+
+.tri1,.tri2,.tri3,.tri4,.tri5,.tri6,.tri7,.tri8,.tri9{
+    display: inline-block;
+    width:0px;
+    height:0px;
+    background:#7fffD4;
+    border-bottom:28px solid dodgerblue;
+    border-right: 28px solid transparent;
+    border-left:28px solid transparent; 
+    position: relative;   
+}
+
+.tri1:after,.tri2:after,.tri3:after,.tri4:after,.tri5:after,.tri6:after,.tri7:after,.tri8:after,.tri9:after{
+    content:"";
+    width:60px;
+    height:30px;
+    border-radius:50%;
+    position: absolute;
+    background:dodgerblue;
+    top:18px;
+    left:-30px;
+}
+.drop1{
+    animation:drop1 1.25s ease-in 0s infinite;
+}
+.drop2{
+    animation:drop2 1.5s ease-out 0s infinite;
+}
+.drop3{
+    animation:drop3 1s ease-in 0s infinite;
+}
+@keyframes drop1{
+    0%{
+        top:0%;
+    }
+    100%{
+        top:100%;
+    }
+}
+@keyframes drop2{
+    0%{
+        top:0%;
+    }
+    100%{
+        top:100%;
+    }
+}
+@keyframes drop3{
+    0%{
+        top:0%;
+    }
+    100%{
+        top:100%;
+    }
+}
+.hide-start{
+    display: none;
+}
+.bounce{
+    animation: bounce 500ms linear 0s infinite;
+}
+
+@keyframes bounce{
+    0%,50%{
+        transform: scale(1);
+    }
+    51%,100%{
+        transform: scale(1.25);
+    }
+}
+
+.clickme{
+    grid-area:h2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    text-transform: uppercase;
+    font-size:20px;
+    font-weight: bold;
+    animation: clickme 1s linear 2s 3;
+}
+@keyframes clickme{
+    0%{
+        color:#fff;
+    }
+    25%{
+        color:#ff1493;
+        transform: rotate(4deg);
+    }
+    50%{
+        color:#8b008b;
+        transform: rotate(-4deg);
+    }
+    75%{
+        color:dodgerblue;
+        transform: rotate(-4deg);
+    }
+    100%{
+        color:green;
+        transform: rotate(4deg);
+    }
+
+}
+
+
+@media only screen and (max-width:550px){
+    .cloud3,.puddle3{
+        display: none;
+    }
+    .cloud1,.cloud2,.puddle1,.puddle2{
+        transform: scale(1.25);
+        justify-content: space-evenly;
+    }
+    .container{
+        margin: 50px auto;
+    }
+    .clickme{
+        grid-area: h1;
+    }
+}
+
+@media only screen and (max-width:300px){
+    .cloud2,.puddle2,.cloud3,.puddle3{
+        display: none;
+    }
+    .cloud1,.puddle1{
+        transform: scale(1.50);
+        justify-content: space-evenly;
+    }
+    .container{
+        margin: 50px auto;
+    }
+    .clickme{
+        grid-area: h1;
+    }
+}
+
+@media only screen and (min-width:900px){
+    .cloud1,.cloud2,.cloud3,.puddle1,.puddle2,.puddle3{
+        transform: scale(1.25);
+        justify-content: space-evenly;
+    }
+    .container{
+        margin: 50px auto;
+    }
+    .clickme{
+        grid-area: h2;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    .cloud1,.cloud2,.cloud3,.puddle1,.puddle2,.puddle3{
+        transform: scale(1.6);
+        justify-content: space-evenly;
+    }
+    .container{
+        margin:50px auto;
+    }
+}

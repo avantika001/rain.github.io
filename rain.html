@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="rain.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="clickme">Click on clouds!</div>
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="cloud3"></div>
+        <div class="rain1">
+            <div class="tri1 hide-start"></div>
+            <div class="tri2 hide-start"></div>
+            <div class="tri3 hide-start"></div>
+        </div>
+        <div class="rain2">
+            <div class="tri4 hide-start"></div>
+            <div class="tri5 hide-start"></div>
+            <div class="tri6 hide-start"></div>
+        </div>
+        <div class="rain3">
+            <div class="tri7 hide-start"></div>
+            <div class="tri8 hide-start"></div>
+            <div class="tri9 hide-start"></div>
+        </div>
+        <div class="puddle1"></div>
+        <div class="puddle2"></div>
+        <div class="puddle3"></div>
+    </div>
+    <script>
+    $('.cloud1').on('click',function(e){
+        $('.tri1').toggleClass('drop1');
+        $('.tri2').toggleClass('drop2');
+        $('.tri3').toggleClass('drop3');
+        $('.tri1').toggleClass('hide-start');
+        $('.tri2').toggleClass('hide-start');
+        $('.tri3').toggleClass('hide-start');
+        $('.cloud1').toggleClass('bounce');
+        $('.puddle1').toggleClass('bounce');
+        //alert('clicked');
+    });
+    $('.cloud2').on('click',function(e){
+        $('.tri4').toggleClass('drop2');
+        $('.tri5').toggleClass('drop2');
+        $('.tri6').toggleClass('drop1');
+        $('.tri4').toggleClass('hide-start');
+        $('.tri5').toggleClass('hide-start');
+        $('.tri6').toggleClass('hide-start');
+        $('.cloud2').toggleClass('bounce');
+        $('.puddle2').toggleClass('bounce');
+    });
+    $('.cloud3').on('click',function(e){
+        $('.tri7').toggleClass('drop3');
+        $('.tri8').toggleClass('drop1');
+        $('.tri9').toggleClass('drop2');
+        $('.tri7').toggleClass('hide-start');
+        $('.tri8').toggleClass('hide-start');
+        $('.tri9').toggleClass('hide-start');
+        $('.cloud3').toggleClass('bounce');
+        $('.puddle3').toggleClass('bounce');
+    });
+    </script>
+    <!--<script src="rain.js"></script>-->
+</body>
+</html>
