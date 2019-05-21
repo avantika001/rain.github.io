@@ -224,10 +224,10 @@ html,body{
     }
     .cloud1,.puddle1{
         transform: scale(1.50);
-        justify-content: space-evenly;
+        
     }
     .container{
-        margin: 50px auto;
+        margin: 10px auto;
     }
     .clickme{
         grid-area: h1;
