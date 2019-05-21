@@ -202,11 +202,11 @@ html,body{
 }
 
 
-@media only screen and (max-width:550px){
-    .cloud3,.puddle3{
+@media only screen and (min-width:400px) and (max-width:650px){
+    .cloud2,.puddle2{
         display: none;
     }
-    .cloud1,.cloud2,.puddle1,.puddle2{
+    .cloud1,.cloud3,.puddle1,.puddle3{
         transform: scale(1.25);
         justify-content: space-evenly;
     }
@@ -218,7 +218,7 @@ html,body{
     }
 }
 
-@media only screen and (max-width:300px){
+@media only screen and (max-width:400px){
     .cloud2,.puddle2,.cloud3,.puddle3{
         display: none;
     }
